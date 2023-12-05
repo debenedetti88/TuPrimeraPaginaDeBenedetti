@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container mt-5" style="background-color: #f7f5f2; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h4>Editoriales</h4>
+        <ul class="list-group">
+            {% for editorial in editoriales %}
+                <li class="list-group-item">
+                    <strong>Editorial:</strong> {{ editorial.nombre }}<br>
+                    <strong>Sitio web:</strong> {{ editorial.sitio_web }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="http://127.0.0.1:8000/AppLibros/agregar_editorial/" class="btn btn-primary mt-3">Nueva editorial</a>
+    </div>
+{% endblock %}

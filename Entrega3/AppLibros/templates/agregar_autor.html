@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container mt-5" style="background-color: #f5f5f5; padding: 20px;">
+        <h4>Agregar Autor</h4>
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Guardar Autor</button>
+        </form>
+    </div>
+{% endblock %}

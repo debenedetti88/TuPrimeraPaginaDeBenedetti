@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Listado de Libros</h2>
+        <ul class="list-group">
+            {% for libro in libros %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ libro.titulo }}
+                    <a href="{% url 'detalle_libro' libro.id %}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="mt-4">
+            <a href="{% url 'agregar_libro' %}" class="btn btn-success">Nuevo Libro</a>
+        </div>
+    </div>
+{% endblock %}

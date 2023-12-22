@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="container mt-5">
-        <h4>Agregar Libro</h4>
-        <form method="post" action="{% url 'agregar_libro' %}">
+        <h4 class="mb-4">Agregar Libro</h4>
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary mt-3">Agregar libro</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
 {% endblock %}

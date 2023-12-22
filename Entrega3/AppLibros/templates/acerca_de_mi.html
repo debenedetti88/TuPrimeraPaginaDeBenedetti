@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container my-5">
+    <h2 class="text-center text-dark">Acerca de Mi</h2>
+    <br>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-success text-center">
+          <div class="card-body">
+            <img src="{% static 'Perfil/img_perfil.jpg' %}" class="rounded-circle mb-3" width="150px">
+            <h3 class="card-title mb-3">Leandro Gaston De Benedetti</h3>
+            <p class="card-text">Consultor BI Ssr.</p>
+            <p class="card-text">Sigueme en:</p>
+            <a href="https://github.com/debenedettitaligent" class="text-dark"><i class="bi bi-github mx-1"></i></a>
+            <a href="https://www.linkedin.com/in/leandro-gaston-de-benedetti-77639b3b/" class="text-dark"><i class="bi bi-linkedin mx-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="">
+          <div class="text-center">
+            <p>Hola. Mi nombre es Leandro De Benedetti. Trabajo como Consultor BI desde hace algun tiempo. 
+            Estoy aprendiendo Python por interes personal y para poder aplicarlo en mi trabajo. 
+            Saludos!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Libro, Editorial, Autor
+from .models import *
 
 @admin.register(Libro)
 class CursoAdmin(admin.ModelAdmin):
@@ -19,3 +19,5 @@ class CursoAdmin(admin.ModelAdmin):
     list_filter = ("nombre", "fecha_nacimiento", "nacionalidad")
     search_fields = ("nombre", "fecha_nacimiento", "nacionalidad")
     
+
+admin.site.register(Avatar)

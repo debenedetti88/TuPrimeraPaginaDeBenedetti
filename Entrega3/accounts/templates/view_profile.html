@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+  <h2>Edicion de Perfil</h2>
+  <br>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <br>
+
+    <button type="submit">Guardar Cambios</button>
+  </form>
+
+  <hr>
+  <br>
+
+  <h2>Cambiar Contrasena</h2>
+  <br>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ password_form.as_p }}
+    <br>
+    <br>
+
+    <button type="submit" name="password_change">Cambiar Contrasena</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+    <h2>{{ libro.titulo }}</h2>
+    <p>Autor: {{ libro.autor }}</p>
+    <p>Editorial: {{ libro.editorial }}</p>
+    <p>Descripcion: {{ libro.descripcion }}</p>
+    <p><a href="{{ libro.url }}" target="_blank">Enlace al libro</a></p>
+    
+    {% if libro.imagen %}
+        <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}" class="img-fluid">
+    {% endif %}
+    
+    <br>
+    <br>
+    <br>
+    <h3>Comentarios</h3>
+    <div class="comments">
+        {% for comentario in comentarios %}
+            <div class="comment">
+                <h4>{{ comentario.titulo }}</h4>
+                {% if comentario.subtitulo %}
+                    <h5>{{ comentario.subtitulo }}</h5>
+                {% endif %}
+                <p>{{ comentario.cuerpo }}</p>
+                <p>Autor: {{ comentario.autor }}</p>
+                <p>Fecha: {{ comentario.fechaComentario }}</p>
+                {% if comentario.imagen %}
+                    <img src="{{ comentario.imagen.url }}" alt="{{ comentario.titulo }}" class="img-fluid">
+                {% endif %}
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <br>
+    
+    <!-- Pagination -->
+    {% if comentarios.has_other_pages %}
+        <ul class="pagination">
+            {% if comentarios.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; primera</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ comentarios.previous_page_number }}">anterior</a></li>
+            {% endif %}
+            <li class="page-item disabled"><span class="page-link">Pagina {{ comentarios.number }} de {{ comentarios.paginator.num_pages }}.</span></li>
+            {% if comentarios.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ comentarios.next_page_number }}">siguiente</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ comentarios.paginator.num_pages }}">ultima &raquo;</a></li>
+            {% endif %}
+        </ul>
+    {% else %}
+        <p>No hay mas comentarios.</p>
+    {% endif %}
+    
+    <!-- Formulario para agregar comentarios -->
+    <form method="post" action="{% url 'agregar_comentario' libro.id %}" class="mt-4" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+    </form>
+{% endblock %}

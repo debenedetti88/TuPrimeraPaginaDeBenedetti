@@ -1,16 +1,16 @@
 AppLibros
 
-Este es un proyecto de catálogo de libros desarrollado con Django y Python.
+Este es un proyecto de catalogo de libros desarrollado con Django y Python.
 
 -------------------------------------------------------------------------------------------------------------------------------
 Funcionalidades
 
-Catálogo de Libros:
+Catalogo de Libros:
 
-Ve a la página principal para ver el catálogo de libros.
+Ve a la pagina principal para ver el catalogo de libros.
 
-Navega por las secciones de Libros, Autores y Editoriales desde el menú de navegación superior.
+Navega por las secciones de Libros, Autores y Editoriales desde el menu de navegacion superior.
 
-Agrega Libros, Autores y Editoriales desde las páginas correspondientes.
+Agrega Libros, Autores y Editoriales desde las paginas correspondientes.
 
-Buscar Libros utilizando la página de búsqueda para encontrar libros en nuestra base de datos por título o autor.
+Buscar Libros utilizando la pagina de busqueda para encontrar libros en nuestra base de datos por título o autor.

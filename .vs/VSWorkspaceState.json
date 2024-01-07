@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Entrega3",
-    "\\Entrega3\\accounts\\static",
-    "\\Entrega3\\accounts\\templates",
     "\\Entrega3\\AppLibros",
     "\\Entrega3\\AppLibros\\templates",
     "\\Entrega3\\AppLibros\\templates\\libros",
@@ -11,6 +8,6 @@
     "\\Entrega3\\media",
     "\\Entrega3\\media\\avatares"
   ],
-  "SelectedNode": "\\Entrega3\\AppLibros\\templates\\libros\\detalle_libro.html",
+  "SelectedNode": "\\Entrega3",
   "PreviewInSolutionExplorer": false
 }
